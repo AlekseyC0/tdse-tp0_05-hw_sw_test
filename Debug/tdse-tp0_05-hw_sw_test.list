@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00017f05  00000000  00000000  0000ed4d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000a029  00000000  00000000  00026c52  2**0
+ 17 .debug_line   0000a02c  00000000  00000000  00026c52  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082c6d  00000000  00000000  00030c7b  2**0
+ 18 .debug_str    00082c6d  00000000  00000000  00030c7e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000b38e8  2**0
+ 19 .comment      00000043  00000000  00000000  000b38eb  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000025e4  00000000  00000000  000b392c  2**2
+ 20 .debug_frame  000025e4  00000000  00000000  000b3930  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 000000b3  00000000  00000000  000b5f10  2**0
+ 21 .debug_line_str 000000b3  00000000  00000000  000b5f14  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -4470,9 +4470,9 @@ void task_a_update(void *parameters)
  8001972:	68fb      	ldr	r3, [r7, #12]
  8001974:	f5b3 7f7a 	cmp.w	r3, #1000	@ 0x3e8
  8001978:	d3f8      	bcc.n	800196c <task_a_update+0x68>
-	#if (TEST_X == TEST_2)
-
-	/* Here Chatbot Artificial Intelligence generated code */
+		LOGGER_LOG("  %s finished execution\r\n", GET_NAME(task_a_update));
+		#endif
+	}
 
 	#endif
 }
@@ -4639,9 +4639,9 @@ void task_b_update(void *parameters)
  8001a9a:	3301      	adds	r3, #1
  8001a9c:	4a0c      	ldr	r2, [pc, #48]	@ (8001ad0 <task_b_update+0xa4>)
  8001a9e:	6013      	str	r3, [r2, #0]
-	#if (TEST_X == TEST_2)
-
-	/* Here Chatbot Artificial Intelligence generated code */
+		}
+		#endif
+	}
 
 	#endif
 }

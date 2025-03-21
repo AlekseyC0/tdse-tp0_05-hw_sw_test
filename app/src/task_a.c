@@ -82,6 +82,8 @@ void task_a_update(void *parameters)
 {
 	#if (TEST_X == TEST_0)
 
+
+
 	/* Memory Layout of C Programs (https://www.geeksforgeeks.org/) */
 	/* Storage Classes in C (https://www.geeksforgeeks.org/) */
 	/* C Variables (https://www.geeksforgeeks.org/) */
@@ -125,7 +127,46 @@ void task_a_update(void *parameters)
 
 	#if (TEST_X == TEST_2)
 
-	/* Here Chatbot Artificial Intelligence generated code */
+	void task_a_update(void *parameters)
+	{
+		#if (TEST_X == TEST_0)
+		uint32_t task_a_cnt;
+
+		g_task_a_cnt++;
+
+		LOGGER_LOG("  %s is running - %s\r\n", GET_NAME(task_a_update), p_task_a);
+		LOGGER_LOG("   %s = %lu\r\n", GET_NAME(g_task_a_cnt), g_task_a_cnt);
+
+		for (task_a_cnt = TASK_A_CNT_INI; task_a_cnt < TASK_A_CNT_MAX; task_a_cnt++);
+
+		#endif
+
+		#if (TEST_X == TEST_1)
+		HAL_Delay(TASK_A_DEL_MAX);
+		#endif
+
+		#if (TEST_X == TEST_2)
+		/* Código generado por Chatbot de Inteligencia Artificial */
+
+		uint32_t task_a_cnt;
+		g_task_a_cnt++;
+
+		LOGGER_LOG("  %s is running - %s\r\n", GET_NAME(task_a_update), p_task_a);
+		LOGGER_LOG("   %s = %lu\r\n", GET_NAME(g_task_a_cnt), g_task_a_cnt);
+
+		/* Bloqueo Activo - Simula una tarea que consume CPU */
+		for (task_a_cnt = TASK_A_CNT_INI; task_a_cnt < TASK_A_CNT_MAX; task_a_cnt++)
+		{
+			// Simulación de un proceso largo (Ejemplo: procesamiento de datos)
+			__asm__("nop");  // Instrucción de "No Operación" para evitar optimización
+		}
+
+		/* Bloqueo por Delay - Simula una espera con HAL_Delay() */
+		HAL_Delay(50);  // Retardo de 50ms bloqueando el CPU
+
+		LOGGER_LOG("  %s finished execution\r\n", GET_NAME(task_a_update));
+		#endif
+	}
 
 	#endif
 }

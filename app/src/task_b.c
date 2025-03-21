@@ -142,7 +142,71 @@ void task_b_update(void *parameters)
 
 	#if (TEST_X == TEST_2)
 
-	/* Here Chatbot Artificial Intelligence generated code */
+	void task_b_update(void *parameters)
+	{
+		#if (TEST_X == TEST_0)
+		static uint32_t task_b_cnt = TASK_B_CNT_INI;
+
+		g_task_b_cnt++;
+
+		LOGGER_LOG("  %s is running - %s\r\n", GET_NAME(task_b_update), p_task_b);
+		LOGGER_LOG("   %s = %lu\r\n", GET_NAME(g_task_b_cnt), g_task_b_cnt);
+
+		if (task_b_cnt < TASK_B_CNT_MAX)
+			task_b_cnt++;
+		else
+			task_b_cnt = TASK_B_CNT_INI;
+		#endif
+
+		#if (TEST_X == TEST_1)
+		static uint32_t then = TASK_B_DEL_INI;
+		static uint32_t now = TASK_B_DEL_INI;
+
+		now = HAL_GetTick();
+		if ((now - then) >= TASK_B_DEL_MAX)
+		{
+			then = now;
+		}
+		#endif
+
+		#if (TEST_X == TEST_2)
+		/* Código generado por Chatbot de Inteligencia Artificial */
+
+		static uint8_t task_b_state = 0;  // Estado inicial
+		static uint32_t then = 0;
+
+		uint32_t now = HAL_GetTick(); // Obtener el tiempo actual
+
+		switch (task_b_state)
+		{
+			case 0:
+				LOGGER_LOG("  Task B - Step 1: Iniciando operación\r\n");
+				then = now;  // Guardar tiempo inicial
+				task_b_state = 1; // Pasar al siguiente estado
+				break;
+
+			case 1:
+				if ((now - then) >= 100)  // Espera sin bloquear (100ms)
+				{
+					LOGGER_LOG("  Task B - Step 2: Procesando datos\r\n");
+					then = now;
+					task_b_state = 2;
+				}
+				break;
+
+			case 2:
+				if ((now - then) >= 150)  // Espera sin bloquear (150ms)
+				{
+					LOGGER_LOG("  Task B - Step 3: Finalizando tarea\r\n");
+					then = now;
+					task_b_state = 0; // Reiniciar ciclo
+					g_task_b_cnt++;  // Incrementar contador global
+					LOGGER_LOG("   %s = %lu\r\n", GET_NAME(g_task_b_cnt), g_task_b_cnt);
+				}
+				break;
+		}
+		#endif
+	}
 
 	#endif
 }

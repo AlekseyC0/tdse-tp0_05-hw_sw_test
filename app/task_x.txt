@@ -11,4 +11,17 @@
   task_c.c (task_c.h)
    Update by Time Code
 
-...
+..
+
+
+
+app_init is running - Tick [mS] = 0
+ Bare Metal - Event-Triggered Systems (ETS)
+ App - retarget_printf_to_Console
+ g_app_cnt = 0
+  task_a_init is running - Task A - Blocking Code
+   g_task_a_cnt = 0
+  task_b_init is running - Task B - Non-Blocking Code
+   g_task_b_cnt = 0
+  task_c_init is running - Task C - Update by Time Code
+   g_task_c_cnt = 0
